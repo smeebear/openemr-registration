@@ -1,12 +1,24 @@
 "use server";
+
+import { z } from "zod";
+
+const patientSchema = z.object({
+  firstName: z.string(),
+  lastName: z.string(),
+  dob: z.string(),
+  gender: z.string(),
+});
+
 export const formSubmission = async (formData: FormData) => {
-  const rawFormData = {
+  const rawFormData = patientSchema.safeParse({
     firstName: formData.get("first-name"),
     lastName: formData.get("last-name"),
     dob: formData.get("DOB"),
-    phone: formData.get("phone"),
-    address: formData.get("address"),
-    city: formData.get("city"),
-  };
-  console.log(rawFormData);
+    gender: formData.get("gender"),
+  });
+  if (rawFormData.success) {
+    console.log(rawFormData.data);
+  } else {
+    console.log("Invalid form data");
+  }
 };
