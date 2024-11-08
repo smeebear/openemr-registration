@@ -18,8 +18,8 @@ export default function Home() {
         <input type="text" placeholder="First Name" name="first-name" />
         <label htmlFor="last-name">Last Name</label>
         <input type="text" placeholder="Last Name" name="last-name" />
-        <label htmlFor="email">Email</label>
-        <input type="email" placeholder="Email" name="email" />
+        <label htmlFor="DOB">Date of Birth</label>
+        <input type="date" placeholder="DOB" name="DOB" />
         <label htmlFor="phone">Phone</label>
         <input type="tel" placeholder="Phone" name="phone" />
         <label htmlFor="address">Address</label>

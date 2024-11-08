@@ -3,7 +3,7 @@ export const formSubmission = async (formData: FormData) => {
   const rawFormData = {
     firstName: formData.get("first-name"),
     lastName: formData.get("last-name"),
-    email: formData.get("email"),
+    dob: formData.get("DOB"),
     phone: formData.get("phone"),
     address: formData.get("address"),
     city: formData.get("city"),
