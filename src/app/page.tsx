@@ -15,17 +15,31 @@ export default function Home() {
       <h1 className="text-4xl font-bold">OpenEMR Patient Self Registration</h1>
       <form action={formSubmission} className="flex flex-col gap-4">
         <label htmlFor="first-name">First Name</label>
-        <input type="text" placeholder="First Name" name="first-name" />
+        <input
+          className="text-slate-900"
+          type="text"
+          placeholder="First Name"
+          name="first-name"
+        />
         <label htmlFor="last-name">Last Name</label>
-        <input type="text" placeholder="Last Name" name="last-name" />
+        <input
+          className="text-slate-900"
+          type="text"
+          placeholder="Last Name"
+          name="last-name"
+        />
         <label htmlFor="DOB">Date of Birth</label>
-        <input type="date" placeholder="DOB" name="DOB" />
-        <label htmlFor="phone">Phone</label>
-        <input type="tel" placeholder="Phone" name="phone" />
-        <label htmlFor="address">Address</label>
-        <input type="text" placeholder="Address" name="address" />
-        <label htmlFor="city">City</label>
-        <input type="text" placeholder="City" name="city" />
+        <input
+          className="text-slate-900"
+          type="date"
+          placeholder="DOB"
+          name="DOB"
+        />
+        <label htmlFor="gender">Gender</label>
+        <select className="text-slate-900" name="sex" id="sex">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
         <button type="submit">Submit</button>
       </form>
     </div>
