@@ -20,6 +20,7 @@ export default function Home() {
           type="text"
           placeholder="First Name"
           name="first-name"
+          required
         />
         <label htmlFor="last-name">Last Name</label>
         <input
@@ -27,6 +28,7 @@ export default function Home() {
           type="text"
           placeholder="Last Name"
           name="last-name"
+          required
         />
         <label htmlFor="DOB">Date of Birth</label>
         <input
@@ -34,9 +36,10 @@ export default function Home() {
           type="date"
           placeholder="DOB"
           name="DOB"
+          required
         />
-        <label htmlFor="gender">Gender</label>
-        <select className="text-slate-900" name="sex" id="sex">
+        <label htmlFor="sex">Sex</label>
+        <select className="text-slate-900" name="sex" id="sex" required>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>

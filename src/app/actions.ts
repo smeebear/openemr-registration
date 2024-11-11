@@ -6,7 +6,7 @@ const patientSchema = z.object({
   firstName: z.string(),
   lastName: z.string(),
   dob: z.string(),
-  gender: z.string(),
+  sex: z.string(),
 });
 
 export const formSubmission = async (formData: FormData) => {
@@ -14,11 +14,17 @@ export const formSubmission = async (formData: FormData) => {
     firstName: formData.get("first-name"),
     lastName: formData.get("last-name"),
     dob: formData.get("DOB"),
-    gender: formData.get("gender"),
+    sex: formData.get("sex"),
   });
-  if (rawFormData.success) {
-    console.log(rawFormData.data);
+  if (!rawFormData.success) {
+    console.log("Form data is invalid");
   } else {
-    console.log("Invalid form data");
+    console.log(rawFormData.data);
+    await fetch("/api/patient", {
+      method: "POST",
+      body: JSON.stringify(rawFormData.data),
+    });
+    console.log("Form data submitted successfully");
   }
+  console.log(rawFormData);
 };
