@@ -20,7 +20,7 @@ export const formSubmission = async (formData: FormData) => {
     console.log("Form data is invalid");
   } else {
     console.log(rawFormData.data);
-    await fetch("/api/patient", {
+    await fetch("https://localhost/api/patient", {
       method: "POST",
       body: JSON.stringify(rawFormData.data),
     });
